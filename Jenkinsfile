@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = 'tasklist-frontend'
+        IMAGE_NAME = 'thibeau-tasklist-frontend'
         IMAGE_TAG  = "${env.BUILD_NUMBER}"
     }
 
