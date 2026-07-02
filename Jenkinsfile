@@ -52,6 +52,7 @@ pipeline {
 
         stage('Qualite de code - SonarQube') {
             steps {
+                retry(2) {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     sh '''
                         npx sonarqube-scanner \
@@ -65,6 +66,7 @@ pipeline {
                             -Dsonar.test.inclusions=**/*.test.ts,**/*.test.tsx \
                             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
                     '''
+                }
                 }
             }
         }
