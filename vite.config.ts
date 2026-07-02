@@ -19,6 +19,12 @@ export default defineConfig({
         'src/main.tsx',
         'src/vite-env.d.ts',
       ],
+      thresholds: {
+        lines: 70,
+        statements: 70,
+        functions: 70,
+        branches: 70,
+      },
     },
     reporters: ['default', 'junit'],
     outputFile: {
